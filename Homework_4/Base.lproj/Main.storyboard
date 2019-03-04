@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qQe-6u-gF8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zEI-qE-7Mm">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="changeTheme:" destination="UDn-Fl-v2n" eventType="touchUpInside" id="7Vw-ka-3c8"/>
+                                            <action selector="changeTheme:" destination="UDn-Fl-v2n" eventType="touchUpInside" id="AMN-rh-pjG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dx-MT-5j8">
@@ -40,7 +40,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="changeTheme:" destination="UDn-Fl-v2n" eventType="touchUpInside" id="SIu-89-7M4"/>
+                                            <action selector="changeTheme:" destination="UDn-Fl-v2n" eventType="touchUpInside" id="8PD-L6-VqQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7n-WE-4T6">
@@ -51,7 +51,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="changeTheme:" destination="UDn-Fl-v2n" eventType="touchUpInside" id="4cT-1a-Oyk"/>
+                                            <action selector="changeTheme:" destination="UDn-Fl-v2n" eventType="touchUpInside" id="ai1-fC-4Jk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -66,11 +66,39 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cwH-BF-JOb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Themes" id="yxN-k9-kWj"/>
+                    <navigationItem key="navigationItem" title="Themes" id="yxN-k9-kWj">
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" style="done" id="QeW-9M-RjV">
+                            <connections>
+                                <action selector="save:" destination="UDn-Fl-v2n" id="ydl-uM-C27"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8CB-kE-zsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271.25" y="195.42253521126761"/>
+            <point key="canvasLocation" x="2268.75" y="195.42253521126761"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="krC-Rv-D7T">
+            <objects>
+                <viewController id="Mgn-SN-dFB" customClass="RootViewController" customModule="Homework_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ExB-Si-uk3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cLC-Sf-gZJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VmG-R3-6Vx">
+                        <barButtonItem key="leftBarButtonItem" title="Изменить" id="D3K-Kq-NHg">
+                            <connections>
+                                <segue destination="qQe-6u-gF8" kind="presentation" id="hQ5-gD-f5Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAQ-84-oJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103.125" y="194.36619718309859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FQK-OA-aOf">
@@ -88,7 +116,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUA-9R-cGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273.75" y="195.42253521126761"/>
+            <point key="canvasLocation" x="1271.25" y="195.42253521126761"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5W6-cV-PZT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zEI-qE-7Mm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rgJ-rC-y24">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mgn-SN-dFB" kind="relationship" relationship="rootViewController" id="FZq-my-JY7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufm-1D-rp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-894.375" y="194.36619718309859"/>
         </scene>
     </scenes>
 </document>

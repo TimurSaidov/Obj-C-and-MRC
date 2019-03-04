@@ -21,6 +21,9 @@
 		39159F97222BF272009D512D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39159F68222BE54C009D512D /* Main.storyboard */; };
 		39159FA5222C21F3009D512D /* ThemesSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39159F98222C003D009D512D /* ThemesSwift.swift */; };
 		39159FA6222C21F7009D512D /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 39159F7E222BEF3F009D512D /* Themes.m */; };
+		391EEA59222D0C6E00EAD40F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39159FBB222C3152009D512D /* RootViewController.swift */; };
+		391EEA5A222D12D600EAD40F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39159FBB222C3152009D512D /* RootViewController.swift */; };
+		391EEA5B222D1B3400EAD40F /* ThemesViewControllerDeleateSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39159F9A222C12D3009D512D /* ThemesViewControllerDeleateSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,7 @@
 		39159F96222BF0EC009D512D /* Homework_4 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Homework_4 copy-Info.plist"; path = "/Users/Timur/Downloads/Финтех/Лекции и ДЗ/04. Memory management/Homework_4/Homework_4 copy-Info.plist"; sourceTree = "<absolute>"; };
 		39159F98222C003D009D512D /* ThemesSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesSwift.swift; sourceTree = "<group>"; };
 		39159F9A222C12D3009D512D /* ThemesViewControllerDeleateSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewControllerDeleateSwift.swift; sourceTree = "<group>"; };
+		39159FBB222C3152009D512D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		39159F85222BEFE2009D512D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				39159FBA222C3143009D512D /* Root */,
 				39159F9E222C135A009D512D /* Theme */,
 				39159F9F222C1362009D512D /* Theme Swift */,
 			);
@@ -174,6 +179,14 @@
 				39159F9A222C12D3009D512D /* ThemesViewControllerDeleateSwift.swift */,
 			);
 			path = "Theme Swift";
+			sourceTree = "<group>";
+		};
+		39159FBA222C3143009D512D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				39159FBB222C3152009D512D /* RootViewController.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				391EEA5A222D12D600EAD40F /* RootViewController.swift in Sources */,
 				39159F72222BE54F009D512D /* main.m in Sources */,
 				39159FA6222C21F7009D512D /* Themes.m in Sources */,
 				39159F64222BE54C009D512D /* AppDelegate.m in Sources */,
@@ -286,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				391EEA59222D0C6E00EAD40F /* RootViewController.swift in Sources */,
+				391EEA5B222D1B3400EAD40F /* ThemesViewControllerDeleateSwift.swift in Sources */,
 				39159F88222BF0EC009D512D /* main.m in Sources */,
 				39159FA5222C21F3009D512D /* ThemesSwift.swift in Sources */,
 				39159F89222BF0EC009D512D /* AppDelegate.m in Sources */,
@@ -370,6 +386,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -440,6 +457,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-D OBJC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Timurv.Homework-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Homework_4/Homework_4-Bridging-Header.h";
@@ -483,8 +501,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-D SWIFT";
 				PRODUCT_BUNDLE_IDENTIFIER = "Timurv.Homework-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Homework_4/Homework_4-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;

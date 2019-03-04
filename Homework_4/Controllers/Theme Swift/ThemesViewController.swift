@@ -11,23 +11,21 @@ import UIKit
 class ThemesViewController: UIViewController {
     
     
-    // MARK: Private properties
-
-    private var closure: () -> () = {
-        return print("Theme changed")
-    }
-    private var model: ThemesSwift?
+    // MARK: Private
     
+    private var model: ThemesSwift?
+    var delegate: ThemesViewControllerDeleateSwift?
+    var closure: (() -> ())?
     
     // MARK: Actions
     
     @IBAction func changeTheme(_ sender: UIButton) {
-        
         switch sender.tag {
         case 1:
             let theme = self.model?.theme1 ?? UIColor.black
             let tint = self.model?.darkTint ?? UIColor.black
-            closure()
+            delegate?.themesViewController(didSelectTheme: theme, didSelectTint: tint)
+            closure!()
             navigationController?.navigationBar.barTintColor = theme
             navigationController?.navigationBar.tintColor = tint
             navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tint]
@@ -35,7 +33,8 @@ class ThemesViewController: UIViewController {
         case 2:
             let theme = self.model?.theme2 ?? UIColor.black
             let tint = self.model?.whiteTint ?? UIColor.white
-            closure()
+            delegate?.themesViewController(didSelectTheme: theme, didSelectTint: tint)
+            closure!()
             navigationController?.navigationBar.barTintColor = theme
             navigationController?.navigationBar.tintColor = tint
             navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tint]
@@ -43,7 +42,8 @@ class ThemesViewController: UIViewController {
         case 3:
             let theme = self.model?.theme3 ?? UIColor.black
             let tint = self.model?.darkTint ?? UIColor.black
-            closure()
+            delegate?.themesViewController(didSelectTheme: theme, didSelectTint: tint)
+            closure!()
             navigationController?.navigationBar.barTintColor = theme
             navigationController?.navigationBar.tintColor = tint
             navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tint]
@@ -53,12 +53,17 @@ class ThemesViewController: UIViewController {
         }
     }
     
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.tintColor = .black
         model = ThemesSwift()
     }
 }

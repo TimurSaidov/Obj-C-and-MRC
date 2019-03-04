@@ -27,7 +27,7 @@
     switch ([sender tag])
     {
         case 1:
-            [[self delegate] themesViewController:self didSelectTheme:[[self model] theme1] didSelectTint:[[self model] darkTint]]; // po _delegate = nil (0x0).
+            [[self delegate] themesViewController:self didSelectTheme:[[self model] theme1] didSelectTint:[[self model] darkTint]]; // (lldb) po _delegate = _TtC10Homework_418RootViewController *    0x7f8c4fc13e10 0x00007f8c4fc13e10 или nil (0x0).
             [bar setBarTintColor: [[self model] theme1]];
             [bar setTintColor:[[self model] darkTint]];
             [bar setTitleTextAttributes:@{NSForegroundColorAttributeName:[[self model] darkTint]}];
@@ -49,9 +49,15 @@
     }
 }
 
+- (IBAction)save:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UINavigationBar appearance] setTintColor:UIColor.blackColor];
     
     self.model = [[Themes alloc] init];
 }
